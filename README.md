@@ -16,4 +16,6 @@
 
 固件下载链接: [GitHub Releases](https://github.com/vernlau/openwrt/releases)
 
----
+## 特别感谢
+
+- [@Joseph Mory](https://github.com/morytyann)
