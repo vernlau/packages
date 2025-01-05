@@ -1,4 +1,4 @@
-# 自用固件
+# OpenWrt SNAPSHOT
 
 ## 基本信息
 
@@ -8,12 +8,15 @@
 - **用户名**: `root`
 - **密码**: 无
 
-## 特性
+## 其它信息
 
-1. **插件**: MihomoTProxy
+1. **源码**: [OpenWrt Source Repository](https://git.openwrt.org/openwrt/openwrt.git)
+2. **插件**: [MihomoTProxy](https://github.com/morytyann/OpenWrt-mihomo)
 
 ## 下载地址
 
 固件下载链接: [GitHub Releases](https://github.com/vernlau/openwrt/releases)
 
----
+## 特别感谢
+
+- [@Joseph Mory](https://github.com/morytyann)

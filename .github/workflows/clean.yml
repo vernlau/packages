@@ -1,0 +1,35 @@
+name: Clean Repo
+
+on:
+  schedule:
+    - cron: "0 3 * * 0"
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Cleanup workflow runs
+        uses: Mattraks/delete-workflow-runs@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          retain_days: 0
+          keep_minimum_runs: 3
+
+      - name: Cleanup Releases
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release list --limit 100 --json name,createdAt \
+          | jq -r '.[] | select(.createdAt < now - 2592000) | .name' \
+          | xargs -I {} gh release delete {} --yes
+
+      - name: Cleanup Tags
+        run: |
+          git fetch --tags
+          git tag --sort=creatordate \
+          | xargs -I {} bash -c '[ $(git log -1 --format=%ct {} || echo 0) -lt $(date +%s --date="30 days ago") ] && git tag -d {} && git push origin --delete refs/tags/{} || true'
