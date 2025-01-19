@@ -1,5 +1,5 @@
-# 2025-01-19 11:52:29
-src-git packages https://git.openwrt.org/feed/packages.git^cd89956c13bf7def493effaf8de1b568a379ebf9
+# 2025-01-20 06:41:32
+src-git packages https://git.openwrt.org/feed/packages.git^c4f95cb0f2fb500ca18595536ea72d0e63954d39
 src-git luci https://git.openwrt.org/project/luci.git^c8cab15d4db36a6f5befca061b4315b57a8907c1
 src-git routing https://git.openwrt.org/feed/routing.git^4a65e359c301d30b70e448e8c25c6edc9c909be5
 src-git telephony https://git.openwrt.org/feed/telephony.git^c8a8d621f95ab8be74a1a512c1ce25c50c84e94b
