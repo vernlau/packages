@@ -4,8 +4,8 @@ set -e
 compress-caches() {
     cd openwrt
     tar -I "zstd -19 -T$(nproc)" -cf openwrt-caches.tar.zst \
-        build_dir \
-        staging_dir \
+        staging_dir/toolchain-* \
+        build_dir/toolchain-* \
         dl
 }
 
