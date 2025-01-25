@@ -10,8 +10,7 @@
 
 ## 其它信息
 
-1. **源码**: [OpenWrt Source Repository](https://git.openwrt.org/openwrt/openwrt.git)
-2. **插件**: [MihomoTProxy](https://github.com/morytyann/OpenWrt-mihomo)
+1. **插件**: [MihomoTProxy](https://github.com/morytyann/OpenWrt-mihomo)
 
 ## 下载地址
 
@@ -20,3 +19,6 @@
 ## 特别感谢
 
 - [@Joseph Mory](https://github.com/morytyann)
+
+## 关于
+本项目使用的 OpenWrt 源码来自官方仓库 [git.openwrt.org](https://git.openwrt.org/openwrt/openwrt.git)。
