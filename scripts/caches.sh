@@ -1,12 +1,14 @@
 #!/bin/bash
-set -e
 
-compress-caches() {
+. "$HOME/openwrt-custom/scripts/constfunc.sh"
+
+compress_caches() {
     cd openwrt
     tar -I "zstd -19 -T$(nproc)" -cf openwrt-caches.tar.zst \
-        staging_dir/toolchain-* \
-        build_dir/toolchain-* \
-        dl
+        build_dir \
+        staging_dir \
+        dl \
+        ccache  
 }
 
 prepare_checksum() {
@@ -14,5 +16,5 @@ prepare_checksum() {
     sha256sum openwrt-caches.tar.zst > sha256.txt
 }
 
-compress-caches
+compress_caches
 prepare_checksum
